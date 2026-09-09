@@ -1127,6 +1127,9 @@ person's tier. The Deck's default Gemma 4 build can think, so this is not gated 
   - **Split 2026-09-05:** the toast slice is its own ★★ roadmap entry, **The answer's first lines in the reply-ready toast**, planned in
     [38-toast-answer-lines.md](planning/38-toast-answer-lines.md) with the maintainer's calls in **D63**. What stays under this entry is the
     overlay research. First step of the plan is a measurement: the reply-ready toast has never been recorded showing over a running game.
+  - **Reframed 2026-09-08:** the same surface is open in a headset, because SteamVR lets a separate program on the PC draw a panel over
+    any game. The headset shapes (a notification card, a wrist panel, a note pinned in space, the full floating panel) are planned in
+    [49-steam-frame-features.md](planning/49-steam-frame-features.md).
 - ★★★★★★ **Native QAM shortcut tile** (under Decky; upstream research)
   - **GitHub:** [bonsAI Issues](https://github.com/qd313/bonsAI/issues) — issue TBD.
   - **Goal:** Separate QAM left-rail entry beneath Decky Loader icon.
@@ -1138,6 +1141,9 @@ person's tier. The Deck's default Gemma 4 build can think, so this is not gated 
 - ★★★★★★ **Steam Frame companion UX** (VR / LAN Deck)
   - **GitHub:** [bonsAI Issues](https://github.com/qd313/bonsAI/issues) — issue TBD.
   - **Goal:** Research-first companion workflows for Steam Frame. [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md).
+  - **Planned 2026-09-08:** nine entries in [49-steam-frame-features.md](planning/49-steam-frame-features.md), each marked with whether a
+    PC running SteamVR can test it before the Frame ships; PC setup steps in [50-steamvr-pc-setup.md](planning/50-steamvr-pc-setup.md).
+    Still owed from the study: the four Frame tips rewritten, one README line, and the re-rate to ★★.
 
 
 ## Appendix (moved from the roadmap 2026-09-02)

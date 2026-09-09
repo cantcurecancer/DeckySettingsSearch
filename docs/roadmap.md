@@ -189,6 +189,10 @@ replace it with a specific issue when one exists.
   answer test come first, in bake-off order. The plugin's licence list is behind: Gemma 4 has been Apache 2.0 since April and is
   still filed as open-weight; Granite and Liquid are unknown to it, so the default open-source-only tier would not route to them.
   One change to the list, the picker's catalogue and the Expert group. [Bake-off](planning/41-deck-model-survey.md).
+- ★★ `[reply]` **Headline first: every answer opens with one line that stands alone** — **OPEN, filed 2026-09-08.** The model is
+  asked to start every answer with one short sentence that carries the point and gives nothing away. The reply-ready popup, a
+  spoken answer and any headset card then always have a good first line to show, instead of whatever the answer happens to begin
+  with. Sits beside Terse mode without replacing it. No headset or PC test needed. [Plan](planning/49-steam-frame-features.md).
 - ★★ `[reply]` **The answer's first lines in the reply-ready toast** — **OPEN, planned 2026-09-05, calls locked (D63).** When an
   answer finishes while the menu is closed, the toast says only *Reply ready*. It would read *bonsAI* over the first lines of
   the answer, in every mode, for eight seconds, so a short answer is read without leaving the game; tap still opens the panel.
@@ -199,6 +203,10 @@ replace it with a specific issue when one exists.
   comedian's own persona. A written sweep, one line per character: who owns the character, whose voice it is, and whether a voice for
   it could be made as a type rather than a copy. Text roleplay sits on the first layer today; any voice would sit on all of them. No
   code; a document the legal check reads. [Memo](planning/42-read-aloud-feasibility.md).
+- ★★ `[ui]` **Glance view: the answer alone, in big text** — **OPEN, filed 2026-09-08.** Opening the menu from the popup shows
+  only the answer, large, with the chips, the question box and the tab bar out of the way, so a person opens, reads and closes in
+  a couple of seconds. B returns to the full panel. Serves a Deck sitting beside a headset as much as the Deck alone. Measure on
+  the Deck first; owes the free-play sweep. No headset test needed. [Plan](planning/49-steam-frame-features.md).
 - ★★ `[ui]` **Replace the bonsAI tab icon with the redesign's** — **OPEN, and no longer waiting on a drawing.** Flatter,
   more silhouette, because it renders at 14px. **Checked 2026-09-05: the redesign document never actually draws one**, and the
   maintainer has said they do not want to supply one. So whoever builds it proposes a shape and the maintainer approves it by
@@ -208,6 +216,14 @@ replace it with a specific issue when one exists.
   The Deck's own voice, which SteamOS has shipped since June 2025, so nothing to download; it keeps reading with the menu closed and
   stops on a second press or a new question. A setting reads new answers on its own when the menu is closed, off by default. A
   hidden spoiler block is skipped with a short spoken phrase. Three Deck checks run before the build. [Memo](planning/42-read-aloud-feasibility.md).
+- ★★ `[voice]` **Spoilers by voice** — **OPEN, filed 2026-09-08; waits on Read answers aloud and Voice follow-ups.** When a spoken
+  answer reaches a hidden spoiler it says "there is a spoiler here, say go on to hear it" and waits; "go on" unhides and reads it,
+  anything else skips it. The block on screen unhides with the spoken one, so the two never disagree. The Deck alone is enough to
+  test. [Plan](planning/49-steam-frame-features.md).
+- ★★ `[voice]` **Voice follow-ups** — **OPEN, filed 2026-09-08; waits on Read answers aloud.** For a few seconds after a spoken
+  answer ends, the mic listens for a handful of words: again, go on, stop, next tip. No wake word needed, since the mic opens only
+  in that window and closes on silence. The words a person needs when they cannot reach the Deck or scroll. The Deck alone is
+  enough to test. [Plan](planning/49-steam-frame-features.md).
 - ★★★ `[ask]` `[focus]` **Steam settings shortcuts float above the question box** — **OPEN, planned 2026-09-06, all calls locked
   (D79).** Today the list of matching Steam settings appears under the box and pushes the box, the chips and the whole
   conversation up the screen; two letters can match 71 settings and throw the box off the top. It moves to a card above the box
@@ -255,6 +271,10 @@ replace it with a specific issue when one exists.
   its own heavy install and an address to paste into Settings, the most setup the plugin has ever asked of anyone, and the one-time
   voice step it would speed up is a wait of minutes on a Deck and seconds on anything stronger. The entry stays so the reason is on
   record. [Memo](planning/42-read-aloud-feasibility.md).
+- ★★★ `[voice]` **Headset mode** — **OPEN, filed 2026-09-08; waits on Read answers aloud and Wake-word listening.** One switch
+  that turns on the wake word, reads every new answer aloud on its own, and asks the model to answer for the ear: two or three
+  sentences, no lists. Made for a visor on your face and a Deck across the room. A PC with SteamVR and any headset helps with one
+  question only: whether the headset's mic reaches the PC during a streamed game. [Plan](planning/49-steam-frame-features.md).
 - ★★★ `[ollama]` **How fast is this model on this Deck** — **OPEN, planned 2026-09-06, calls open (D75).** Next to each installed
   model, how fast it answered on this Deck the last time it was used, and a button to time it now with one fixed question. The
   numbers already exist on every answer; the plugin keeps a last-ten record per model with the game that was running, shows a
@@ -274,6 +294,14 @@ replace it with a specific issue when one exists.
   [llama-cpp-provider.md](archive/spikes/llama-cpp-provider.md).
 - ★★★★ `[platform]` **Steam Input layout parse** — **OPEN.** Parse controller VDF configs for control context. Not in scope: writing
   configs.
+- ★★★★ `[reply]` **A note pinned in space** — **OPEN, filed 2026-09-08; needs the SteamVR panel first.** In a headset, park the
+  answer on a wall or table beside you. It stays there while you play, so a checklist becomes a sticky note you glance at between
+  fights. Worth testing on a PC with SteamVR now: the built-in pretend headset can show a panel fixed in the room, and a real
+  headset judges whether it reads. [Plan](planning/49-steam-frame-features.md).
+- ★★★★ `[reply]` **A wrist panel** — **OPEN, filed 2026-09-08; needs the SteamVR panel first.** In a headset, a small panel rides
+  on one controller. Turn your wrist, read the answer, drop your hand and it is gone. No pointer needed. Worth testing on a PC
+  with SteamVR now, but only with a real headset and tracked controllers; the pretend headset has no hands.
+  [Plan](planning/49-steam-frame-features.md).
 - ★★★★ `[ui]` **SteamOS Share path** — **OPEN.** Faster path from Share and capture flows into screenshot attach where APIs allow.
 - ★★★★ `[ui]` **SteamOS spin hint card** — **OPEN.** Detect immutable spins and deep-link to troubleshooting.
 > - ★★★★ `[voice]` `[shelved]` **A voice for a custom character** *— **OPEN, shelved with the bundled voices 2026-09-08 (D74).** Type a name, press
@@ -291,6 +319,11 @@ replace it with a specific issue when one exists.
   the Deck sees as a real controller, a macro runner gated on real UI state, and one recording pipeline. Primitives land upstream in
   decky-plugin-studio. Next: spikes S1 to S3. [Plan](planning/19-controller-macro-test-rig.md), [program](planning/21-ai-owned-testing-program.md).
 - ★★★★★ `[platform]` **Steam Controller copilot (Ibex gen-2)** — **OPEN.** AI copy tuned to gen-2 hardware.
+- ★★★★★ `[platform]` **The floating panel inside SteamVR** — **OPEN, filed 2026-09-08; the first step is a ★★ test to find out.**
+  bonsAI's panel floating over any VR game, drawn by a small program on the PC that runs SteamVR, so it serves every SteamVR
+  headset and the Frame comes along. Not a Decky plugin. The in-game answer surface that is blocked on the Deck is open here. The
+  test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
+  answer be read at arm's length. [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
   thinking model to think and throws the thinking away; the line under your question shows a stock phrase for the whole wait.
   Planned: three lines at the answer's size show the model's own newest sentences, fold to one line with the seconds when the
@@ -302,12 +335,21 @@ replace it with a specific issue when one exists.
   [Feasibility](planning/12-deep-mod-ai-hints-feasibility.md).
 - ★★★★★★ `[platform]` **Native QAM shortcut tile** — **OPEN, upstream research.** A separate left-rail entry beneath the Decky icon.
   [Feasibility](planning/11-native-qam-tile-feasibility.md).
+- ★★★★★★ `[platform]` **One decision for three items: the SteamVR panel, leaving Decky, and reopening llama.cpp** — **OPEN, filed
+  2026-09-08.** The floating panel needs bonsAI to run outside Decky, which is what the Native QAM shortcut tile research keeps
+  circling, and any model on the Frame itself runs through llama.cpp, not Ollama. Three entries, one question: does bonsAI grow a
+  second way to run. Decide it once. The panel half benefits from a PC with SteamVR now; the llama.cpp half is a Deck question.
+  [Plan](planning/49-steam-frame-features.md).
 - ★★★★★★ `[platform]` **Remote Play diagnostics layer** — **OPEN.** Streamed-gameplay answers weight encode latency and host-vs-client
   fixes. Noted in [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md) § B8.
-- ★★★★★★ `[platform]` **Steam Frame companion UX** — **OPEN, research first.** [Feasibility](planning/09-steam-frame-companion-feasibility.md).
-- ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full overlay
-  is upstream-gated and stays here as research. The unblocked slice, the toast carrying the answer's first lines, is its own ★★
-  entry above, planned in [38](planning/38-toast-answer-lines.md).
+- ★★★★★★ `[platform]` **Steam Frame companion UX** — **OPEN, research first.**
+  [Feasibility](planning/09-steam-frame-companion-feasibility.md). Nine features planned from it on 2026-09-08 in
+  [49](planning/49-steam-frame-features.md), with a PC test bench in [50](planning/50-steamvr-pc-setup.md). The study's own first
+  step is still owed: rewrite the four Frame tips, add one README line, and re-rate this entry from six stars to two.
+- ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full
+  overlay is upstream-gated and stays here as research. The unblocked slice, the toast carrying the answer's first lines, is its
+  own ★★ entry above, planned in [38](planning/38-toast-answer-lines.md). Reframed 2026-09-08: the same surface is open in a
+  headset through SteamVR on the PC; see **The floating panel inside SteamVR** and [49](planning/49-steam-frame-features.md).
 
 ---
 
