@@ -353,8 +353,10 @@ replace it with a specific issue when one exists.
   fixes. Noted in [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md) § B8.
 - ★★★★★★ `[platform]` **Steam Frame companion UX** — **OPEN, research first.**
   [Feasibility](planning/09-steam-frame-companion-feasibility.md). Nine features planned from it on 2026-09-08 in
-  [49](planning/49-steam-frame-features.md), with a PC test bench in [50](planning/50-steamvr-pc-setup.md). The study's own first
-  step is still owed: rewrite the four Frame tips, add one README line, and re-rate this entry from six stars to two.
+  [49](planning/49-steam-frame-features.md), with a PC test bench in [50](planning/50-steamvr-pc-setup.md). The study's first step
+  shipped 2026-09-12: the seven Frame knowledge-base tips were rewritten (no more mention of a phone app that does not exist) and
+  one README line was added saying how to use bonsAI beside a Frame. Re-rating this entry from six stars to two is still the
+  maintainer's own call and has not been made.
 - ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full
   overlay is upstream-gated and stays here as research. The unblocked slice, the toast carrying the answer's first lines, is its
   own ★★ entry above, planned in [38](planning/38-toast-answer-lines.md). Reframed 2026-09-08: the same surface is open in a

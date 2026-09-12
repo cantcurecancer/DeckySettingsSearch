@@ -27,11 +27,11 @@ and a good first line.
   chip. Not ours to fix. The one sign to watch for is Decky publishing a build for ARM chips.
 - **Voice in and voice out are one feature with a visor on.** You cannot read a screen. A wake word
   without spoken answers leaves a person in VR with an answer they cannot receive.
-- **The study's cheap first step is still owed.** Rewrite the four thin Frame tips in the knowledge
-  base, add one README line, and drop the Frame entry's rating from six stars to two. The four tips
-  are unchanged: one mentions a phone app that does not exist, one claims a display bug nobody could
-  source, one is a note to us that leaked into what users read. No decision on the re-rate was ever
-  recorded.
+- **The study's cheap first step shipped 2026-09-12.** The four thin Frame tips in the knowledge base
+  were rewritten (the one mentioning a phone app that does not exist, the one claiming a display bug
+  nobody could source, and the one that was really a note to us rather than advice for a person) and
+  one README line was added. Still owed: dropping the Frame entry's rating from six stars to two. No
+  decision on that re-rate has been recorded.
 - **The Deck's popup has never been recorded over a running game.** The popup slice of the in-game
   answer surface waits on that measurement, not on code.
 - **The hard part of a headset panel is pointing, not drawing.** The whole plugin is built around
@@ -211,7 +211,7 @@ picks them up.
    on this list waits on it.
 4. **Which headset for the tests.** None, a Quest with Steam Link, or wait for the Frame.
 
-## 6. The Frame tips, ready to ship
+## 6. The Frame tips — shipped 2026-09-12
 
 The knowledge base has four short Frame tips today, written before the study. The study judged each
 one, and proposed seven to replace them. The wording below is ready to go into the tip generator; the
@@ -230,9 +230,8 @@ generated tips file is output and is never edited by hand. Topic `steam_frame`, 
 
 1. Steam Frame with bonsAI: run bonsAI on a Steam Deck on the same home network. There is no bonsAI
    inside the headset.
-2. Point bonsAI at the PC that streams your Frame games: the PC's address followed by `:11434`. On
-   the PC, Ollama must be set to accept connections from other devices and port 11434 must be allowed
-   through the firewall.
+2. Point bonsAI at the PC that streams your Frame games: the PC address followed by `:11434`. On that
+   PC, Ollama must accept connections from other devices and port 11434 must pass the firewall.
 3. The PC streaming your game is the best place to run the model. Same machine, no extra hop.
 4. Frame comfort: reduce locomotion intensity; a seated playspace reduces nausea.
 5. VR framerate misses feel worse than flat-screen ones. Prefer a lower refresh rate that holds over a
@@ -247,9 +246,10 @@ health claims: comfort settings, not medical advice. The tips reach an answer on
 knowledge-base search; nothing in the prompt mentions the Frame, so a person with no headset never
 sees them.
 
-**What shipping them costs.** ★★. Edit the generator, regenerate the tips file, run the Python tests,
-and add the README's one line saying bonsAI does not run on the Frame and how to use a Deck beside
-it. Same change set as the re-rate in § 5.
+**What shipping them cost.** ★★. Shipped 2026-09-12: the generator was edited, the tips file
+regenerated, the Python tests updated and passing, and the README's one line added saying bonsAI does
+not run on the Frame and how to use a Deck beside it. The re-rate in § 5 was not part of this change
+and is still owed.
 
 ## 7. Not on this list, on purpose
 

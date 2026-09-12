@@ -2431,3 +2431,22 @@ class CompatPatternsTipContentTests(unittest.TestCase):
             self.assertLessEqual(
                 len(row["card"]), 200, f"pattern {row['pattern_id']} card is too long to be a quick tip"
             )
+
+    def test_steam_frame_tips_replaced_after_the_frame_study(self):
+        """Plan 49 section 6: the four old Frame tips (one of which pointed at a phone app
+        that does not exist) are gone, replaced by seven that read as general guidance and
+        never claim bonsAI has readings from a headset it cannot have."""
+        frame_cards = [row["card"] for row in self.patterns if row["topic"] == "steam_frame"]
+        self.assertEqual(len(frame_cards), 7)
+
+        for card in frame_cards:
+            with self.subTest(card=card):
+                self.assertNotIn("phone", card.lower())
+                self.assertNotIn("research-phase", card.lower())
+                self.assertNotIn("bonsai observed", card.lower())
+                self.assertNotIn("detected", card.lower())
+
+        self.assertTrue(
+            any(":11434" in card for card in frame_cards),
+            "one tip should tell a person the port to point bonsAI at on the streaming PC",
+        )

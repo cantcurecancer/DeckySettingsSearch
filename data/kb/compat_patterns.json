@@ -1108,7 +1108,7 @@
     "platforms": [
       "frame"
     ],
-    "card": "Steam Frame: companion Deck/phone on LAN for bonsAI while HMD in-game.",
+    "card": "Steam Frame with bonsAI: run bonsAI on a Steam Deck on the same home network. There is no bonsAI inside the headset.",
     "source_url": "",
     "source_license": "bonsAI-maintainer"
   },
@@ -1118,17 +1118,17 @@
     "platforms": [
       "frame"
     ],
-    "card": "Frame comfort: reduce locomotion intensity; seated playspace reduces nausea.",
+    "card": "Point bonsAI at the PC that streams your Frame games: the PC address followed by :11434. On that PC, Ollama must accept connections from other devices and port 11434 must pass the firewall.",
     "source_url": "",
     "source_license": "bonsAI-maintainer"
   },
   {
     "pattern_id": 112,
-    "topic": "fex",
+    "topic": "steam_frame",
     "platforms": [
-      "linux"
+      "frame"
     ],
-    "card": "FEX-Emu on ARM Linux: experimental x86 emulation; not AMD Deck path.",
+    "card": "The PC streaming your game is the best place to run the model. Same machine, no extra hop.",
     "source_url": "",
     "source_license": "bonsAI-maintainer"
   },
@@ -1138,7 +1138,7 @@
     "platforms": [
       "frame"
     ],
-    "card": "Frame theater mode: wrong display target can mirror desktop instead of HMD.",
+    "card": "Frame comfort: reduce locomotion intensity; a seated playspace reduces nausea.",
     "source_url": "",
     "source_license": "bonsAI-maintainer"
   },
@@ -1148,12 +1148,42 @@
     "platforms": [
       "frame"
     ],
-    "card": "Frame companion UX is research-phase; verify Valve docs before assuming APIs.",
+    "card": "VR framerate misses feel worse than flat-screen ones. Prefer a lower refresh rate that holds over a higher one that stutters.",
     "source_url": "",
     "source_license": "bonsAI-maintainer"
   },
   {
     "pattern_id": 115,
+    "topic": "steam_frame",
+    "platforms": [
+      "frame"
+    ],
+    "card": "Screenshots taken while streaming save on the host PC, not on the Deck running bonsAI.",
+    "source_url": "",
+    "source_license": "bonsAI-maintainer"
+  },
+  {
+    "pattern_id": 116,
+    "topic": "steam_frame",
+    "platforms": [
+      "frame"
+    ],
+    "card": "If a flat game opens on the wrong display, check the display or output target before changing graphics settings.",
+    "source_url": "",
+    "source_license": "bonsAI-maintainer"
+  },
+  {
+    "pattern_id": 117,
+    "topic": "fex",
+    "platforms": [
+      "linux"
+    ],
+    "card": "FEX-Emu on ARM Linux: experimental x86 emulation; not AMD Deck path.",
+    "source_url": "",
+    "source_license": "bonsAI-maintainer"
+  },
+  {
+    "pattern_id": 118,
     "topic": "fex",
     "platforms": [
       "linux"
@@ -1163,7 +1193,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 116,
+    "pattern_id": 119,
     "topic": "network",
     "platforms": [
       "deck"
@@ -1173,7 +1203,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 117,
+    "pattern_id": 120,
     "topic": "network",
     "platforms": [
       "deck"
@@ -1183,7 +1213,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 118,
+    "pattern_id": 121,
     "topic": "emudeck",
     "platforms": [
       "deck"
@@ -1193,7 +1223,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 119,
+    "pattern_id": 122,
     "topic": "emudeck",
     "platforms": [
       "deck"
@@ -1203,7 +1233,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 120,
+    "pattern_id": 123,
     "topic": "linux",
     "platforms": [
       "linux"
@@ -1213,7 +1243,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 121,
+    "pattern_id": 124,
     "topic": "shader",
     "platforms": [
       "deck"
@@ -1223,7 +1253,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 122,
+    "pattern_id": 125,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1233,7 +1263,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 123,
+    "pattern_id": 126,
     "topic": "crash",
     "platforms": [
       "deck",
@@ -1244,7 +1274,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 124,
+    "pattern_id": 127,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1254,7 +1284,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 125,
+    "pattern_id": 128,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1264,7 +1294,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 126,
+    "pattern_id": 129,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1274,7 +1304,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 127,
+    "pattern_id": 130,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1284,7 +1314,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 128,
+    "pattern_id": 131,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1294,7 +1324,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 129,
+    "pattern_id": 132,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1304,7 +1334,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 130,
+    "pattern_id": 133,
     "topic": "crash",
     "platforms": [
       "deck"
@@ -1314,7 +1344,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 131,
+    "pattern_id": 134,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1324,7 +1354,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 132,
+    "pattern_id": 135,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1334,7 +1364,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 133,
+    "pattern_id": 136,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1344,7 +1374,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 134,
+    "pattern_id": 137,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1354,7 +1384,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 135,
+    "pattern_id": 138,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1364,7 +1394,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 136,
+    "pattern_id": 139,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1374,7 +1404,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 137,
+    "pattern_id": 140,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1384,7 +1414,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 138,
+    "pattern_id": 141,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1394,7 +1424,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 139,
+    "pattern_id": 142,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1404,7 +1434,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 140,
+    "pattern_id": 143,
     "topic": "performance",
     "platforms": [
       "deck"
@@ -1414,7 +1444,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 141,
+    "pattern_id": 144,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1424,7 +1454,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 142,
+    "pattern_id": 145,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1434,7 +1464,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 143,
+    "pattern_id": 146,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1444,7 +1474,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 144,
+    "pattern_id": 147,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1454,7 +1484,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 145,
+    "pattern_id": 148,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1464,7 +1494,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 146,
+    "pattern_id": 149,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1474,7 +1504,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 147,
+    "pattern_id": 150,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1484,7 +1514,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 148,
+    "pattern_id": 151,
     "topic": "audio",
     "platforms": [
       "deck"
@@ -1494,7 +1524,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 149,
+    "pattern_id": 152,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1504,7 +1534,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 150,
+    "pattern_id": 153,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1514,7 +1544,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 151,
+    "pattern_id": 154,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1524,7 +1554,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 152,
+    "pattern_id": 155,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1534,7 +1564,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 153,
+    "pattern_id": 156,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1544,7 +1574,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 154,
+    "pattern_id": 157,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1554,7 +1584,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 155,
+    "pattern_id": 158,
     "topic": "display",
     "platforms": [
       "deck"
@@ -1564,7 +1594,7 @@
     "source_license": "bonsAI-maintainer"
   },
   {
-    "pattern_id": 156,
+    "pattern_id": 159,
     "topic": "display",
     "platforms": [
       "deck"

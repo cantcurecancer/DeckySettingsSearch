@@ -166,12 +166,18 @@ add("controller", ["deck"], "If a controller stops responding mid-game, disconne
 add("controller", ["deck"], "If it connects but no buttons do anything, forget the device and pair it again.")
 add("controller", ["deck"], "Weak or missing vibration usually means it connected as a generic device, not through Steam Input.")
 
-# Frame / FEX (6)
-add("steam_frame", ["frame"], "Steam Frame: companion Deck/phone on LAN for bonsAI while HMD in-game.")
-add("steam_frame", ["frame"], "Frame comfort: reduce locomotion intensity; seated playspace reduces nausea.")
+# Frame / FEX (9)
+# The seven steam_frame tips below replace the four thin ones from before the Steam Frame
+# study (docs/planning/49-steam-frame-features.md section 6, shipped 2026-09-11). They read
+# as general guidance -- bonsAI has no readings from a headset and never claims one.
+add("steam_frame", ["frame"], "Steam Frame with bonsAI: run bonsAI on a Steam Deck on the same home network. There is no bonsAI inside the headset.")
+add("steam_frame", ["frame"], "Point bonsAI at the PC that streams your Frame games: the PC address followed by :11434. On that PC, Ollama must accept connections from other devices and port 11434 must pass the firewall.")
+add("steam_frame", ["frame"], "The PC streaming your game is the best place to run the model. Same machine, no extra hop.")
+add("steam_frame", ["frame"], "Frame comfort: reduce locomotion intensity; a seated playspace reduces nausea.")
+add("steam_frame", ["frame"], "VR framerate misses feel worse than flat-screen ones. Prefer a lower refresh rate that holds over a higher one that stutters.")
+add("steam_frame", ["frame"], "Screenshots taken while streaming save on the host PC, not on the Deck running bonsAI.")
+add("steam_frame", ["frame"], "If a flat game opens on the wrong display, check the display or output target before changing graphics settings.")
 add("fex", ["linux"], "FEX-Emu on ARM Linux: experimental x86 emulation; not AMD Deck path.")
-add("steam_frame", ["frame"], "Frame theater mode: wrong display target can mirror desktop instead of HMD.")
-add("steam_frame", ["frame"], "Frame companion UX is research-phase; verify Valve docs before assuming APIs.")
 add("fex", ["linux"], "FEX vs Proton: Proton is primary on Steam Deck AMD.")
 
 # misc (6)

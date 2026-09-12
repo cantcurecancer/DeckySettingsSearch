@@ -106,6 +106,8 @@ Upcoming work includes user notes stash, couch-distance readability, native QAM 
 | **On the Steam Deck** | Portable; use `http://127.0.0.1:11434`. Heavier CPU/VRAM load — may affect game performance                                                                                                                                                    |
 | **PC on the LAN**     | Much faster on a GPU. Point bonsAI at `http://<PC-IP>:11434`. PC must listen on the network (`OLLAMA_HOST=0.0.0.0`, firewall **TCP 11434**). Details: [troubleshooting § Network](docs/troubleshooting.md#2-network--communication-the-bridge) |
 
+bonsAI does not run on the Steam Frame headset itself. To use it alongside a Frame, run bonsAI on a Steam Deck on the same home network and point it at the PC that streams your Frame games (Base URL `http://<PC-IP>:11434`).
+
 
 
 
