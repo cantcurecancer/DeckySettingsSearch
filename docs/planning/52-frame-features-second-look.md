@@ -266,6 +266,41 @@ someone forgets what B does, and the bottom line already tells them.
 2. Should glance open on its own from the popup, or should the menu open as today and glance be one
    press away? The drawing assumes the popup opens straight into glance.
 3. Should the chat row's LB and RB (next and previous chat) work inside glance? The drawing says no.
+4. When a new answer arrives while glance is open: stay in glance and show it, or bring the full
+   panel back? Both are drawn (second row of the canvas). Recommended: stay.
+
+### 6.6 Settled with the maintainer on 2026-09-12
+
+**The position rail.** The maintainer asked for a large, obvious sign of where you are in the
+answer. The drawing now has a rail down the right edge of every glance board: an arrow up, the stop
+you are on out of how many, one tall block per paragraph with the current one lit, an arrow down.
+The hidden spoiler counts as a stop, as it does for the D-pad today. The rail takes 32 px of width,
+so the text gets 250 px instead of 276. Up and Down move the ring and the rail together.
+
+**What each press does.** Glance is a lid on the panel. Reading presses work inside it; any other
+press lifts it.
+
+| Press | In glance |
+|---|---|
+| Up, Down | Move between paragraphs; the ring and the rail follow |
+| A on the hidden spoiler | Opens it, as today |
+| A anywhere else | Read aloud, once that exists; nothing until then |
+| B | The full panel comes back |
+| X, Y, Steam button | The full panel comes back, then the press does what it does today |
+| LB, RB | The full panel comes back on the tab you asked for |
+| A tap on the answer | What A does |
+| A tap on the bottom line | What B does |
+
+**Coming back is not a morph, and must not snap either.** The full panel appears with the same
+paragraph at the top and the ring still on it, so the eye lands where it was. The bars around the
+answer fade in over about a sixth of a second instead of appearing at once. The text drops from the
+big size to the normal size in that moment; that reflow is the whole change. The fade is measured on
+the Deck before it ships, as every Main tab change is, and dropped if the panel's own frame rate
+suffers.
+
+**The bottom line may wrap.** A second line costs 14 px out of 676 px of reading space, about two
+per cent. The drawing's leading board shows the long version on two lines so the cost is visible.
+The rule: the line is never cut off at the edge; if it does not fit, it wraps.
 
 ## 7. The PC bench, three additions to plan 50
 
