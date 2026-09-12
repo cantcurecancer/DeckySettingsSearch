@@ -160,6 +160,10 @@ with SteamVR and no headset at all. Three things to find out, all from the study
 
 The pretend headset answers the first two. The third needs a real one.
 
+**Bench run 2026-09-12.** The pretend headset answers the first question and the second, not pointing
+— it has no controllers, so pointing needs a real headset. Full findings:
+[plan 53](53-steamvr-bench-findings.md).
+
 ### 2.9 One decision for three items: the SteamVR panel, leaving Decky, and reopening llama.cpp — ★★★★★★ `[platform]`
 
 **What it is.** Three roadmap entries are one question. The floating panel (2.8) needs bonsAI to run

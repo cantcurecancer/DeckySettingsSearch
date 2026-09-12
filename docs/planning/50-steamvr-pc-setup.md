@@ -29,6 +29,29 @@ There are two routes. **Route A** uses SteamVR's built-in pretend headset and ne
 
 ## 3. Route A: the pretend headset (no hardware)
 
+**Correction, 2026-09-12.** The way that actually worked, on the first try, was one personal settings
+file Steam keeps in its own config folder — it survives updates, unlike the two files below. On a
+Windows PC that file is `Steam\config\steamvr.vrsettings`; SteamVR creates it on first run, or you can
+create it empty by hand first. Its contents (from
+[plan 52 § 7.1](52-frame-features-second-look.md#71-the-personal-settings-file)):
+
+```
+{
+  "steamvr": {
+    "requireHmd": false,
+    "forcedDriver": "null",
+    "activateMultipleDrivers": true
+  },
+  "driver_null": {
+    "enable": true
+  }
+}
+```
+
+The two-file edit below still works and stays as the fallback. **One more thing worth knowing before
+you start:** the pretend headset takes no mouse input on a panel at all, so with it alone you can only
+test whether something shows and how it looks — not clicking, typing, or anything that needs pointing.
+
 SteamVR ships a "null" driver: a fake headset that lets SteamVR start, run its menu, and draw panels
 into a window on your desktop. Two small text files switch it on. Close SteamVR before editing them.
 

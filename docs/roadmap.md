@@ -200,8 +200,15 @@ replace it with a specific issue when one exists.
   with. Sits beside Terse mode without replacing it. No headset or PC test needed. **The maintainer called this the weakest of
   the nine Frame features on 2026-09-11 and asked for a count before a build:** how many of ten first sentences already stand
   alone on their own, and how many give something away. Build the change only if that count comes back poor. **The maintainer
-  locked count-first on 2026-09-12 (D97 call 4), and the count started the same day.** [Plan](planning/49-steam-frame-features.md) ·
-  [Second look § 2](planning/52-frame-features-second-look.md#2-headline-first-the-weakest-one-and-what-to-do-instead).
+  locked count-first on 2026-09-12 (D97 call 4), and the count started the same day.** **The count ran 2026-09-12: 2 of 10
+  answers already opened with a sentence that stands alone, and 0 of 10 gave anything away. That is a poor score, so by the
+  locked rule this gets built.** Stars stay at two. Before writing a new prompt, one more thing to count: an answer-first
+  opening was already tried on purpose the same evening as the count's source answers, and that run may already be the
+  change, so it gets counted the same way first. This entry is no longer "count first"; it is "build, after counting that
+  earlier answer-first run". [Plan](planning/49-steam-frame-features.md) · [Second look
+  § 2](planning/52-frame-features-second-look.md#2-headline-first-the-weakest-one-and-what-to-do-instead) ·
+  [Bench findings § 4](planning/53-steamvr-bench-findings.md#4-the-headline-first-count-run-the-same-morning) ·
+  [The count, sentence by sentence](planning/assets/53-headline-count-2026-09-12.md).
 - ★★ `[reply]` **The answer's first lines in the reply-ready toast** — **OPEN, planned 2026-09-05, calls locked (D63).** When an
   answer finishes while the menu is closed, the toast says only *Reply ready*. It would read *bonsAI* over the first lines of
   the answer, in every mode, for eight seconds, so a short answer is read without leaving the game; tap still opens the panel.
@@ -346,10 +353,16 @@ replace it with a specific issue when one exists.
   test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
   answer be read at arm's length. **Locked rule (D97):** the panel goes only through SteamVR's own panel door and never touches
   the game itself, in file, in memory or in input — anything else risks an anti-cheat ban for someone playing online with bonsAI
-  open. Best effort: each game's anti-cheat sets its own policy, and the README will say so once the panel ships. **The bench for
-  this test started on the maintainer's PC 2026-09-12; findings will land in plan 53.**
-  [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md) ·
-  [The anti-cheat rule in full](planning/52-frame-features-second-look.md#4-the-floating-panel-and-anti-cheat).
+  open. Best effort: each game's anti-cheat sets its own policy, and the README will say so once the panel ships. **Bench result,
+  2026-09-12:** a panel showing a sample bonsAI answer appeared inside the headset view over a running SteamVR scene, with no
+  plugin code at all — drawn entirely through SteamVR's own panel door. The in-headset menu is confirmed to be a web page, the
+  same way the Deck's menu is. Pointing at the panel could not be tested: the pretend headset used for the bench has no
+  controllers, so a real headset is needed for that part. SteamVR did accept the call to post a small notification card, but
+  whether the card actually drew on screen was not seen and needs another pass. [Plan](planning/49-steam-frame-features.md) ·
+  [PC setup](planning/50-steamvr-pc-setup.md) ·
+  [The anti-cheat rule in full](planning/52-frame-features-second-look.md#4-the-floating-panel-and-anti-cheat) ·
+  [Bench findings](planning/53-steamvr-bench-findings.md) ·
+  [The picture](planning/assets/53-panel-in-headset-2026-09-12.jpg).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
   thinking model to think and throws the thinking away; the line under your question shows a stock phrase for the whole wait.
   Planned: three lines at the answer's size show the model's own newest sentences, fold to one line with the seconds when the
@@ -369,8 +382,13 @@ replace it with a specific issue when one exists.
   it — so a panel on the PC would have a screen and no brain until this is decided. Three options and a recommendation to find
   out how far the "run the same Python side on the PC too" option really is from true, before choosing, are in plan 52 § 5.
   **Locked 2026-09-12 (D97 call 2): the PC bench checks how far that option is from true before the decision is made; llama.cpp
-  stays closed.** [Plan](planning/49-steam-frame-features.md) ·
-  [Second look § 5](planning/52-frame-features-second-look.md#5-the-second-way-to-run-the-gap-plan-49-underplayed).
+  stays closed.** **The check passed 2026-09-12:** the plugin's Python side was started outside Decky on the maintainer's
+  Windows PC, using a fifty-line stand-in for Decky. Nine calls the frontend normally makes all came back with a working
+  answer, and it reached Ollama on that PC. The "run the same Python side on the PC too" choice is now a priced decision
+  instead of a guess. **This does not decide it — that call is still the maintainer's to make.**
+  [Plan](planning/49-steam-frame-features.md) ·
+  [Second look § 5](planning/52-frame-features-second-look.md#5-the-second-way-to-run-the-gap-plan-49-underplayed) ·
+  [Bench findings § 3](planning/53-steamvr-bench-findings.md#3-the-plugins-python-side-on-this-pc-it-runs).
 - ★★★★★★ `[platform]` **Remote Play diagnostics layer** — **OPEN.** Streamed-gameplay answers weight encode latency and host-vs-client
   fixes. Noted in [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md) § B8.
 - ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full

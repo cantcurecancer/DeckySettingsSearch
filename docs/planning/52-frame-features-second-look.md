@@ -58,6 +58,13 @@ on the cheap model, since the answers already exist.
 **Roadmap change.** The entry stays at two stars and gains one line: counted first, built only if the
 count is poor. Filed as D97 call 4.
 
+**The count came back 2026-09-12, and it is poor.** Of ten answers, only 2 opened with a sentence that
+stands alone, and 0 gave anything away. By the rule above, that means this gets built. Before writing a
+new prompt, one more count is owed: an answer-first opening was already tried on purpose the same
+evening, on the same set of questions, and that run may already be the change being asked for here — so
+it gets counted the same way before anything new is written. Full count in
+[plan 53 § 4](53-steamvr-bench-findings.md#4-the-headline-first-count-run-the-same-morning).
+
 ## 3. Voice follow-ups: a sound, a short listen, a few words
 
 ### 3.1 What a person notices
@@ -198,6 +205,11 @@ worker and it turns the six-star decision into a priced one.
 **Not reopened: llama.cpp.** The study said do not reopen it because of the Frame, and nothing here
 changes that. The PC runs Ollama. The Frame's own chip is a Deck-shaped question for another day.
 
+**The check passed, 2026-09-12.** The plugin's Python side started outside Decky on the maintainer's
+PC with the fifty-line stand-in, answered nine calls the frontend normally makes, and reached Ollama.
+The decision is now priced rather than guessed at. See
+[plan 53 § 3](53-steamvr-bench-findings.md#3-the-plugins-python-side-on-this-pc-it-runs).
+
 ## 6. Glance view: the brief and the mockup
 
 **Shelved 2026-09-12 by the maintainer.** Their own words: "shelve the glanceable view for now. It's too much UI
@@ -311,7 +323,8 @@ The rule: the line is never cut off at the edge; if it does not fit, it wraps.
    personal SteamVR settings file in its own config folder, and updates do not touch it. The three
    lines for the pretend headset, and the line that turns the pretend driver on, go there. Plan 50's
    two-file edit stays as the fallback if SteamVR ignores the driver line in the personal file, which
-   is possible and will be known within a minute of trying. The exact contents are in § 7.1.
+   is possible and will be known within a minute of trying. The exact contents are in § 7.1. **Worked
+   on the first start, 2026-09-12** — the two-file edit was never needed.
 2. **A fourth thing to find out: do SteamVR's small pop-up cards still work.** Plan 49's cheapest
    first step is to post one card when an answer finishes. That part of SteamVR is old and Valve has
    not looked after it in years. Before betting the first step on it, post one card from the bench and
@@ -354,7 +367,7 @@ To go back to a real headset later, remove the `forcedDriver` line and set `requ
 3. Glance view: the mockup goes to Claude Design, then the Deck measurement, then the build. **Shelved
    2026-09-12 by the maintainer — too much UI change, not ready for it yet.**
 4. The PC bench: SteamVR, the pretend headset, the desktop-mirror tool, the five questions, and the
-   "run the Python side on the PC" check from § 5. One session. Findings to plan 53.
+   "run the Python side on the PC" check from § 5. One session. Findings to plan 53. **Done 2026-09-12.**
 5. Read answers aloud (D74), then Voice follow-ups with the tones, then Spoilers by voice.
 6. The second-way-to-run decision, now priced by step 4.
 7. Everything above four stars, after 6.
