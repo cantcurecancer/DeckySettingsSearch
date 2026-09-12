@@ -200,6 +200,9 @@ changes that. The PC runs Ollama. The Frame's own chip is a Deck-shaped question
 
 ## 6. Glance view: the brief and the mockup
 
+**Shelved 2026-09-12 by the maintainer.** Their own words: "shelve the glanceable view for now. It's too much UI
+change and we're not ready for it yet." This section stays as the record for when it comes back.
+
 **The mockup:** [Glance View on the design canvas](https://claude.ai/code/artifact/c48fb3e2-38ef-4c91-997c-c515353eec96),
 drawn 2026-09-11. The working files are in [docs/design/handoffs/glance-view/](../design/handoffs/glance-view/),
 so the canvas can be rebuilt after a change. Five boards at true size, 300 px wide and 700 px tall: the
@@ -347,8 +350,9 @@ To go back to a real headset later, remove the `forcedDriver` line and set `requ
 ## 8. Order, revised
 
 1. Tips and README line. Done 2026-09-11.
-2. The Headline first count. A morning, no code.
-3. Glance view: the mockup goes to Claude Design, then the Deck measurement, then the build.
+2. The Headline first count. A morning, no code. **Started 2026-09-12.**
+3. Glance view: the mockup goes to Claude Design, then the Deck measurement, then the build. **Shelved
+   2026-09-12 by the maintainer — too much UI change, not ready for it yet.**
 4. The PC bench: SteamVR, the pretend headset, the desktop-mirror tool, the five questions, and the
    "run the Python side on the PC" check from § 5. One session. Findings to plan 53.
 5. Read answers aloud (D74), then Voice follow-ups with the tones, then Spoilers by voice.

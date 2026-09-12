@@ -199,8 +199,8 @@ replace it with a specific issue when one exists.
   spoken answer and any headset card then always have a good first line to show, instead of whatever the answer happens to begin
   with. Sits beside Terse mode without replacing it. No headset or PC test needed. **The maintainer called this the weakest of
   the nine Frame features on 2026-09-11 and asked for a count before a build:** how many of ten first sentences already stand
-  alone on their own, and how many give something away. Build the change only if that count comes back poor. Filed as D97 call
-  4. [Plan](planning/49-steam-frame-features.md) ·
+  alone on their own, and how many give something away. Build the change only if that count comes back poor. **The maintainer
+  locked count-first on 2026-09-12 (D97 call 4), and the count started the same day.** [Plan](planning/49-steam-frame-features.md) ·
   [Second look § 2](planning/52-frame-features-second-look.md#2-headline-first-the-weakest-one-and-what-to-do-instead).
 - ★★ `[reply]` **The answer's first lines in the reply-ready toast** — **OPEN, planned 2026-09-05, calls locked (D63).** When an
   answer finishes while the menu is closed, the toast says only *Reply ready*. It would read *bonsAI* over the first lines of
@@ -212,16 +212,13 @@ replace it with a specific issue when one exists.
   comedian's own persona. A written sweep, one line per character: who owns the character, whose voice it is, and whether a voice for
   it could be made as a type rather than a copy. Text roleplay sits on the first layer today; any voice would sit on all of them. No
   code; a document the legal check reads. [Memo](planning/42-read-aloud-feasibility.md).
-- ★★ `[ui]` **Glance view: the answer alone, in big text** — **OPEN, filed 2026-09-08.** Opening the menu from the popup shows
-  only the answer, large, with the chips, the question box and the tab bar out of the way, so a person opens, reads and closes in
-  a couple of seconds. B returns to the full panel. Serves a Deck sitting beside a headset as much as the Deck alone. Measure on
-  the Deck first; owes the free-play sweep. No headset test needed. **A mockup was drawn 2026-09-11 at true size from the real
-  stylesheet values**, showing three ways to do it; the recommendation is the plain, bare option — just the answer, edge to
-  edge, with one line at the bottom saying what the buttons do. Three questions for the maintainer are still open, on the
-  mockup itself. [Plan](planning/49-steam-frame-features.md) ·
-  [Mockup and options](planning/52-frame-features-second-look.md#6-glance-view-the-brief-and-the-mockup) ·
-  [Open questions](planning/52-frame-features-second-look.md#65-open-questions-for-the-maintainer-on-the-canvas) ·
-  [Drawing](https://claude.ai/code/artifact/c48fb3e2-38ef-4c91-997c-c515353eec96).
+> - ★★ `[ui]` `[shelved]` **Glance view: the answer alone, in big text** *— **OPEN, shelved 2026-09-12: too much UI change, and
+>   we're not ready for it yet, in the maintainer's own words.** Opening the menu from the popup would have shown only the
+>   answer, large, with the chips, the question box and the tab bar out of the way, so a person opens, reads and closes in a
+>   couple of seconds; B would return to the full panel. The mockup and the press list are kept in
+>   [plan 52 § 6](planning/52-frame-features-second-look.md#6-glance-view-the-brief-and-the-mockup) and the design handoff
+>   folder, for when it comes back. [Plan](planning/49-steam-frame-features.md) ·
+>   [Drawing](https://claude.ai/code/artifact/c48fb3e2-38ef-4c91-997c-c515353eec96).*
 - ★★ `[ui]` **Replace the bonsAI tab icon with the redesign's** — **OPEN, and no longer waiting on a drawing.** Flatter,
   more silhouette, because it renders at 14px. **Checked 2026-09-05: the redesign document never actually draws one**, and the
   maintainer has said they do not want to supply one. So whoever builds it proposes a shape and the maintainer approves it by
@@ -292,7 +289,8 @@ replace it with a specific issue when one exists.
 - ★★★ `[voice]` **Headset mode** — **OPEN, filed 2026-09-08; waits on Read answers aloud and Wake-word listening.** One switch
   that turns on the wake word, reads every new answer aloud on its own, and asks the model to answer for the ear: two or three
   sentences, no lists. Made for a visor on your face and a Deck across the room. A PC with SteamVR and any headset helps with one
-  question only: whether the headset's mic reaches the PC during a streamed game. [Plan](planning/49-steam-frame-features.md).
+  question only: whether the headset's mic reaches the PC during a streamed game. **No headset is being bought for now (D97 call
+  3); this waits for the Frame.** [Plan](planning/49-steam-frame-features.md).
 - ★★★ `[ollama]` **How fast is this model on this Deck** — **OPEN, planned 2026-09-06, calls open (D75).** Next to each installed
   model, how fast it answered on this Deck the last time it was used, and a button to time it now with one fixed question. The
   numbers already exist on every answer; the plugin keeps a last-ten record per model with the game that was running, shows a
@@ -315,11 +313,12 @@ replace it with a specific issue when one exists.
 - ★★★★ `[reply]` **A note pinned in space** — **OPEN, filed 2026-09-08; needs the SteamVR panel first.** In a headset, park the
   answer on a wall or table beside you. It stays there while you play, so a checklist becomes a sticky note you glance at between
   fights. Worth testing on a PC with SteamVR now: the built-in pretend headset can show a panel fixed in the room, and a real
-  headset judges whether it reads. [Plan](planning/49-steam-frame-features.md).
+  headset judges whether it reads. **No headset is being bought for now (D97 call 3); this waits for the Frame.**
+  [Plan](planning/49-steam-frame-features.md).
 - ★★★★ `[reply]` **A wrist panel** — **OPEN, filed 2026-09-08; needs the SteamVR panel first.** In a headset, a small panel rides
   on one controller. Turn your wrist, read the answer, drop your hand and it is gone. No pointer needed. Worth testing on a PC
-  with SteamVR now, but only with a real headset and tracked controllers; the pretend headset has no hands.
-  [Plan](planning/49-steam-frame-features.md).
+  with SteamVR now, but only with a real headset and tracked controllers; the pretend headset has no hands. **No headset is
+  being bought for now (D97 call 3); this waits for the Frame.** [Plan](planning/49-steam-frame-features.md).
 - ★★★★ `[ui]` **SteamOS Share path** — **OPEN.** Faster path from Share and capture flows into screenshot attach where APIs allow.
 - ★★★★ `[ui]` **SteamOS spin hint card** — **OPEN.** Detect immutable spins and deep-link to troubleshooting.
 > - ★★★★ `[voice]` `[shelved]` **A voice for a custom character** *— **OPEN, shelved with the bundled voices 2026-09-08 (D74).** Type a name, press
@@ -347,7 +346,8 @@ replace it with a specific issue when one exists.
   test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
   answer be read at arm's length. **Locked rule (D97):** the panel goes only through SteamVR's own panel door and never touches
   the game itself, in file, in memory or in input — anything else risks an anti-cheat ban for someone playing online with bonsAI
-  open. Best effort: each game's anti-cheat sets its own policy, and the README will say so once the panel ships.
+  open. Best effort: each game's anti-cheat sets its own policy, and the README will say so once the panel ships. **The bench for
+  this test started on the maintainer's PC 2026-09-12; findings will land in plan 53.**
   [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md) ·
   [The anti-cheat rule in full](planning/52-frame-features-second-look.md#4-the-floating-panel-and-anti-cheat).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
@@ -368,17 +368,11 @@ replace it with a specific issue when one exists.
   **The gap underneath this: there is no network door into bonsAI's Python side today** — nothing on another machine can reach
   it — so a panel on the PC would have a screen and no brain until this is decided. Three options and a recommendation to find
   out how far the "run the same Python side on the PC too" option really is from true, before choosing, are in plan 52 § 5.
-  Filed as D97 call 2. [Plan](planning/49-steam-frame-features.md) ·
+  **Locked 2026-09-12 (D97 call 2): the PC bench checks how far that option is from true before the decision is made; llama.cpp
+  stays closed.** [Plan](planning/49-steam-frame-features.md) ·
   [Second look § 5](planning/52-frame-features-second-look.md#5-the-second-way-to-run-the-gap-plan-49-underplayed).
 - ★★★★★★ `[platform]` **Remote Play diagnostics layer** — **OPEN.** Streamed-gameplay answers weight encode latency and host-vs-client
   fixes. Noted in [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md) § B8.
-- ★★★★★★ `[platform]` **Steam Frame companion UX** — **OPEN, research first.**
-  [Feasibility](planning/09-steam-frame-companion-feasibility.md). Nine features planned from it on 2026-09-08 in
-  [49](planning/49-steam-frame-features.md), with a PC test bench in [50](planning/50-steamvr-pc-setup.md). The study's first step
-  shipped 2026-09-12: the seven Frame knowledge-base tips were rewritten (no more mention of a phone app that does not exist) and
-  one README line was added saying how to use bonsAI beside a Frame. Re-rating this entry from six stars to two is still the
-  maintainer's own call and has not been made — it is filed as D97 call 1, with the recommendation to close this entry as done
-  instead of re-rating it, since the nine planned entries now carry all of the remaining work.
 - ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full
   overlay is upstream-gated and stays here as research. The unblocked slice, the toast carrying the answer's first lines, is its
   own ★★ entry above, planned in [38](planning/38-toast-answer-lines.md). Reframed 2026-09-08: the same surface is open in a
@@ -827,6 +821,12 @@ is fine, the one-second target is retired (D84). Anything new goes here, one lin
 
 Everything shipped since v0.4.9 (2026-07-08), one line each, newest first. Detail: [CHANGELOG.md](../CHANGELOG.md),
 [archive/roadmap-completed.md](archive/roadmap-completed.md), [archive/roadmap-bugs-fixed.md](archive/roadmap-bugs-fixed.md).
+
+**Closed 2026-09-12 (the maintainer closed this research entry; its remaining work lives in the plan it started):**
+- ★★★★★★ `[platform]` **Steam Frame companion UX** — closed as done 2026-09-12 (D97 call 1). The study's own first step
+  shipped the same day: the seven Frame knowledge-base tips were rewritten so none of them point at a phone app that does
+  not exist, and the README gained one line on how to use bonsAI beside a Frame. The nine features the study planned carry
+  the rest of the work; see [plan 49](planning/49-steam-frame-features.md).
 
 **Fixed 2026-09-11 (Deck testing tools, not the plugin itself, so no Deck check is owed for this pair):**
 - ★ `[platform]` **Deck recorder produced empty videos** — it used to ask the compositor for its video by name,
