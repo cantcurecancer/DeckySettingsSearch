@@ -243,20 +243,33 @@ bonsai_try_pipewire_gamescope_record() {
   gst_log=/tmp/bonsai_record_gst.log
   : >"$gst_log"
 
-  diag "pipewire-gamescope: starting gst-launch duration=${duration}s target=gamescope"
-  bonsai_run_gst_pipewire_target "gamescope" "$duration" "$partial" "$gst_log" || true
+  # Ask for the compositor's video node by its numeric id, not by name. On SteamOS
+  # (measured 2026-09-09) target-object=gamescope connects but never delivers a
+  # frame, so the file stays header-only, while the node id records fine. pw-cli
+  # prints each node's "id N," line before its properties, so remember the last id
+  # seen and report it when the block turns out to be the gamescope video source.
+  node_id=$(bonsai_pw_env_run pw-cli ls Node 2>/dev/null | awk '
+    /^[[:space:]]*id [0-9]+,/ { if (name && vid) { print id; exit } id=$2; sub(",", "", id); name=0; vid=0 }
+    /media\.class = "Video\/Source"/ { vid=1 }
+    /node\.name = "gamescope"/ { name=1 }
+    END { if (name && vid) print id }')
+  if [ -z "$node_id" ]; then
+    node_id=$(bonsai_pw_env_run pw-cli ls Node 2>/dev/null | awk '
+      /^[[:space:]]*id [0-9]+,/ { id=$2; sub(",", "", id) }
+      /node\.name = "gamescope"/ { print id; exit }')
+  fi
+
+  if [ -n "$node_id" ]; then
+    diag "pipewire-gamescope: starting gst-launch duration=${duration}s target=node id $node_id"
+    bonsai_run_gst_pipewire_target "$node_id" "$duration" "$partial" "$gst_log" || true
+  else
+    diag "pipewire-gamescope: no gamescope video node found in pw-cli ls Node"
+  fi
 
   if [ ! -f "$partial" ] || ! validate_recording "$partial"; then
-    diag "pipewire-gamescope: target-object=gamescope failed; trying pw-cli node id"
+    diag "pipewire-gamescope: node id path failed (id=${node_id:-none}); trying target-object=gamescope by name"
     rm -f "$partial" 2>/dev/null
-    node_id=$(bonsai_pw_env_run pw-cli ls Node 2>/dev/null | awk '/object.name = "gamescope"/{found=1} found && /id [0-9]+/{print $2; exit}')
-    if [ -z "$node_id" ]; then
-      node_id=$(bonsai_pw_env_run pw-cli ls Node 2>/dev/null | grep -i gamescope | head -1 | sed -n 's/.*id \([0-9]*\).*/\1/p')
-    fi
-    if [ -n "$node_id" ]; then
-      diag "pipewire-gamescope: retry with node id $node_id"
-      bonsai_run_gst_pipewire_target "$node_id" "$duration" "$partial" "$gst_log" || true
-    fi
+    bonsai_run_gst_pipewire_target "gamescope" "$duration" "$partial" "$gst_log" || true
   fi
 
   if [ ! -f "$partial" ]; then

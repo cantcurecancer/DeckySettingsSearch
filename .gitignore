@@ -83,3 +83,6 @@ recordings/
 
 # v0 UI drafts (reference only; not part of the Decky bundle)
 src/v0-drafts/
+
+# Deck walk evidence written by the plugin-studio tools; keep what a testing row cites in docs/test-evidence instead
+runs/
