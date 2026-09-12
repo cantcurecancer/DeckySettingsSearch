@@ -91,20 +91,11 @@ hook gives a gentle heads-up when a session starts work outside this.
   who walks past something and presses Up to go back does not return to it; they land somewhere they never visited. Related to the
   two-star entry about Up skipping sections, but sharper: the two directions disagree about what the reply's stops are.
   Evidence `runs/round35-spoiler-block-down-and-up.json`.
-- ★ `[platform]` **Deck recorder produced empty videos** — **fix ready, awaiting commit.** The recording tool asked
-  the compositor for its video by name, which connects but sends no picture; its fallback then searched for a label
-  the Deck never prints, so that failed too. Fixed 2026-09-11 by asking for the video by its number first, in this
-  repo's recording script and both copies inside the plugin-studio checkout. Verified on the Deck: an eight-second
-  clip recorded on the first try; the plugin-studio server needs a restart to pick up the fix.
-- ★ `[platform]` **Deck walk tool wrote a file on every run** — **fix ready, awaiting commit.** Every run of the
-  walk tool saved a record file into the runs folder automatically, and 464 of them had built up and gotten
-  committed by accident. Fixed 2026-09-11 in the plugin-studio checkout: now only a run you name saves a file, and
-  the runs folder is ignored by git from today. The 464 old files stay for now, until plan 51's docs phase decides
-  which ones a testing row should point to.
 > - ★ `[platform]` `[shelved]` **In-IDE preview never gets past its loading screen** *— **OPEN, shelved 2026-09-11
 >   (D93): not a gate for anything.** On the maintainer's machine the preview stops on its loading screen and never
 >   moves past it; its command channel takes commands but never answers, and it produced no screenshot. Sorted with
->   the other tooling in plan 51's docs phase. [Plan](planning/51-refactor-round-two.md).*
+>   the other tooling in plan 51's docs phase. It unshelves when the preview loads the plugin on the maintainer's
+>   machine. [Plan](planning/51-refactor-round-two.md).*
 - ★★ `[focus]` **After the panel remounts the ring parks on a zero-size container** — **OPEN, found 2026-09-04.** On a fresh mount
   the ring lands on "Ask bonsAI" (Main) or "Where AI runs" (Ollama), both 0x0 rects that the visibility oracle calls OFFSCREEN, so
   the panel opens with nothing highlighted until the first press.
@@ -332,16 +323,16 @@ replace it with a specific issue when one exists.
 - ★★★★★ `[platform]` **Controller macro test rig and live view** — **OPEN, discovery locked 2026-08-23, board ordered.** A bridge board
   the Deck sees as a real controller, a macro runner gated on real UI state, and one recording pipeline. Primitives land upstream in
   decky-plugin-studio. Next: spikes S1 to S3. [Plan](planning/19-controller-macro-test-rig.md), [program](planning/21-ai-owned-testing-program.md).
+- ★★★★★ `[platform]` **Refactor round two (plan 51)** — **OPEN, planned 2026-09-11, calls locked (D89 to D96).** A
+  seven-phase clean-up touching the code, the tests, the build scripts, the docs and how agent sessions work here,
+  with nothing about how the plugin behaves changing for a person using it. Work starts only when the maintainer
+  says the exact words "start refactor implementation now." [Plan](planning/51-refactor-round-two.md).
 - ★★★★★ `[platform]` **Steam Controller copilot (Ibex gen-2)** — **OPEN.** AI copy tuned to gen-2 hardware.
 - ★★★★★ `[platform]` **The floating panel inside SteamVR** — **OPEN, filed 2026-09-08; the first step is a ★★ test to find out.**
   bonsAI's panel floating over any VR game, drawn by a small program on the PC that runs SteamVR, so it serves every SteamVR
   headset and the Frame comes along. Not a Decky plugin. The in-game answer surface that is blocked on the Deck is open here. The
   test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
   answer be read at arm's length. [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md).
-- ★★★★★ `[refactor]` **Refactor round two (plan 51)** — **OPEN, planned 2026-09-11, calls locked (D89 to D96).** A
-  seven-phase clean-up touching the code, the tests, the build scripts, the docs and how agent sessions work here,
-  with nothing about how the plugin behaves changing for a person using it. Work starts only when the maintainer
-  says the exact words "start refactor implementation now." [Plan](planning/51-refactor-round-two.md).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
   thinking model to think and throws the thinking away; the line under your question shows a stock phrase for the whole wait.
   Planned: three lines at the answer's size show the model's own newest sentences, fold to one line with the seconds when the
@@ -812,6 +803,16 @@ is fine, the one-second target is retired (D84). Anything new goes here, one lin
 
 Everything shipped since v0.4.9 (2026-07-08), one line each, newest first. Detail: [CHANGELOG.md](../CHANGELOG.md),
 [archive/roadmap-completed.md](archive/roadmap-completed.md), [archive/roadmap-bugs-fixed.md](archive/roadmap-bugs-fixed.md).
+
+**Fixed 2026-09-11 (Deck testing tools, not the plugin itself, so no Deck check is owed for this pair):**
+- ★ `[platform]` **Deck recorder produced empty videos** — it used to ask the compositor for its video by name,
+  which connects but never sends a picture, so recordings came out empty; it now asks for the video by its
+  number first and a clip records on the first try. Fixed in commit `9d4407c` here and `12260e3` in the
+  plugin-studio checkout; the plugin-studio server needs a restart to load the fix.
+- ★ `[platform]` **Deck walk tool wrote a file on every run** — every run used to save a record file whether
+  anyone wanted one or not, and 464 built up and got committed by accident; only a run you name now saves one,
+  and the folder they land in is ignored by git from today. Fixed in commit `9d4407c` here and `12260e3` in the
+  plugin-studio checkout. The old files stay until plan 51's docs phase decides which ones a testing row cites.
 
 **Fixed 2026-09-07 (knowledge base, wave three — these are the tools that grade answers and searches, not
 the plugin itself, so nothing here needs a Deck check):**
