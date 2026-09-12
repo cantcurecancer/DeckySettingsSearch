@@ -4599,3 +4599,243 @@ model on these turns and that line would be false.
   a gap is gone. Approved by the maintainer before publishing.
 - **Wave two's stray-computer-text row was run and failed.** The fix does not cover the case the
   bug came from; the cause is written up on the roadmap. Not scoped for a fix this session.
+
+---
+
+## Refactor round two (plan 51): the calls from the planning discovery, 2026-09-09 to 2026-09-11
+
+Eight grouped entries. Each locks the calls the maintainer made in the three-round discovery for
+[plan 51](../planning/51-refactor-round-two.md), with the options passed over. The plan holds the
+phases, the numbers and the worker instructions; this file holds only what was decided and why.
+
+### D89 — LOCKED 2026-09-11 — Refactor round two replaces round one: scope, order, and what stays out
+
+**Raised** when the maintainer asked for a whole-project clean-up with tokens as the first priority,
+and the planning session found the round-one plan with four of its five work items done.
+
+#### The calls
+
+- **A fresh plan replaces the round-one plan.** The old file carries a banner from today and moves
+  to the archive in the docs phase, with its finished items recorded.
+- **Everything is in scope:** front end, back end, tests, helper scripts, the MCP package, docs.
+  The helper scripts are sorted the same way as docs, because many are one-off probes.
+- **Seven phases in this order:** tools, docs, map and measure, delete, reshape, explain, handoff.
+  Docs come before code because every later agent pays for the docs it has to read. Comments come
+  after the code stops moving so they do not go stale.
+- **Behavior is strictly preserved.** A worker that trips over a bug writes a roadmap entry and
+  never fixes it inside a refactor commit.
+- **Of the giants, only two are split this round:** the main backend file, along the lines round
+  one already mapped, and the ask hook. The plugin root and the six components over 950 lines get
+  a thorough header and a "split later" roadmap entry each.
+- **Tests are in scope for slimming** once the code stabilizes. A test that breaks during a move
+  because it asserted the old shape rather than behavior may be deleted with a one-line note.
+- **Ruff is added for Python; ESLint is not added.**
+- **Work starts from the experimental branch and lands there.**
+- **Feature work continues alongside the refactor** (the maintainer's call on 2026-09-11). A
+  feature branch starts from the tip after the latest landing and rebases over the moves; the
+  delete and reshape phases land in small commits, and every landing lists its moved files in
+  the session notes, so a rebase stays small.
+
+#### Passed over
+
+- Extending the old plan: its remaining item was investigated but the new scope is much wider.
+- Splitting every giant: that is where refactor bugs come from; a header is cheap and safe.
+- Code before docs: every agent would keep paying about 100,000 tokens per landing to read docs.
+- Pausing feature work during the delete and reshape phases: simpler, but the maintainer wants
+  to keep adding features.
+
+### D90 — LOCKED 2026-09-11 — Docs: archive by status, split the two giant docs, one neutral guide
+
+**Raised** by the measurement that the testing doc is 315 KB and the roadmap 109 KB, that the repo
+rule makes every landing read both, and that every doc was touched inside 90 days so age cannot
+say which are stale.
+
+#### The calls
+
+- **Every doc gets one of four statuses:** active, shipped, superseded, abandoned. A cheap model
+  proposes the list with a reason per doc; the maintainer confirms it once; the bookkeeper moves
+  the files.
+- **Archived docs are deleted 90 days after archiving,** and only when the maintainer says yes
+  to a list of the overdue ones. Nothing is deleted automatically.
+- **The roadmap and the testing doc are split** into a small current file and an archive file
+  each. The rule to update both before marking work done stays; they just get small.
+- **The orientation file shrinks** to under 8 KB and stops carrying hand-typed counts; a
+  generated facts block replaces them. Four of its numbers were wrong on the day of measuring.
+- **The neutral guide becomes the one guide** for a human and for any AI tool that reads it;
+  the Claude file keeps only what is Claude-specific.
+- **The 464 committed device-run files:** the ones a testing row cites move to the evidence
+  folder; the rest leave git. New run files can no longer be committed by accident.
+- **The lessons that live only in Claude's memory on this machine** move into a repo doc in the
+  handoff phase, so other tools and people can read them.
+
+#### Passed over
+
+- Archiving by age: impossible here, the repo is young and active.
+- Automatic deletion: a person says yes to a list, every time.
+
+### D91 — LOCKED 2026-09-11 — Cursor is dropped; two personas survive in a tool-neutral form
+
+**Raised** when the maintainer said Cursor will not be used on this project again and asked what
+a tool-neutral persona would lose against a Claude-tailored one.
+
+#### The calls
+
+- **Delete the Cursor folder and the Cursor log-capture example script,** after two moves: the
+  D-pad focus rule is rewritten into the neutral guide with the two corrections from the review
+  saved on 2026-09-11 (its pointers into a settings file went stale, and it names a low-level
+  focus handoff that a safer helper has since replaced), and each Cursor skill is compared against
+  the guides so nothing they lack is lost.
+- **Cursor mentions come out of the six live docs** that carry them. The changelog and the
+  archive keep theirs as history.
+- **The FOSS advocate and the security auditor survive** as one neutral body each, readable by
+  any tool, plus a five-line Claude wrapper that pins the model and the tools and says "follow
+  the body". One copy of the content, both benefits.
+
+#### Passed over
+
+- Keeping the folder for a possible return: the maintainer was clear it will not return.
+- Claude-only agent files: other tools could not read them.
+- Neutral files only: that loses the automatic pick-up, the model pin, the read-only tool set and
+  the separate context window, and the last two matter most for an auditor.
+
+### D92 — LOCKED 2026-09-11 — Headers and comments: length follows the file, never counts or line numbers
+
+**Raised** when the maintainer asked whether the "three or four lines to a paragraph" limit should
+go up, and asked that any of their own arbitrary rules be flagged when they hurt the priorities.
+
+#### The calls
+
+- **No fixed cap.** A small helper gets three to six sentences; a normal file a paragraph on
+  what it is for and how it fits, plus a gotchas list when there is one; a big file adds a
+  walk-through of its main flow, naming the functions in order, as long as it needs; a long
+  function gets two or three sentences at the top, and a numbered step list when very long.
+- **Keep the existing labels** as the skeleton, rewritten in plain words, plus "How it works" for
+  big files and "Gotchas" when there are any. 278 of 298 files already carry the labels.
+- **Names of files and functions are allowed inside code comments.** The plain-language rule is
+  for what the maintainer reads.
+- **Headers never carry counts or line numbers.** A checker verifies that every header is present,
+  has its sections, and that every function it names still exists. A script gathers every header
+  into one generated map of the code, which replaces a hand-written architecture doc.
+- **A header cannot rescue a 1,480-line function.** The giants left unsplit get a "split later"
+  roadmap entry so the next maintainer knows it is debt, not design.
+
+#### Passed over
+
+- The original cap: the maintainer flagged it as an arbitrary limit that could hurt maintainability.
+- A new header format: it would touch all 298 files for no gain over the labels already there.
+
+### D93 — LOCKED 2026-09-11 — The Deck is the gate; the preview is shelved; device checks are queued
+
+**Raised** when the maintainer asked for a recording of the same check on the Deck and in the
+in-IDE preview, and the preview turned out to be stuck on its loading screen.
+
+#### The calls
+
+- **Deck checks at the end of the delete, reshape and explain phases,** and after any merge that
+  touches focus. Between those, the automated checks stand alone.
+- **Any merge that touches D-pad focus goes to Opus after a device measurement.** Kept even
+  though it is slower.
+- **The preview is shelved.** It has never got past "Loading plugin preview" on this machine, its
+  command channel accepts commands and never answers them, and it produced no image. It is not a
+  gate and nothing in the plan depends on it. It is sorted with the other tooling in the docs
+  phase, not fixed here.
+- **Device checks are queued.** One runner per batch, holding the wake lock, running the ready
+  check before every row. The ready check caught a build mismatch on 2026-09-09 before a single
+  press.
+- **Two tool fixes made on 2026-09-11 stand:** the Deck recorder asks the compositor for its
+  video stream by numeric id, because asking by name connects but never delivers a frame; the walk
+  tool writes an evidence file only for a named run, and the runs folder is ignored by git. Both
+  are uncommitted until the maintainer says, and the plugin-studio server must be restarted to
+  load them.
+
+#### Passed over
+
+- The preview as the gate between device checks: it does not load.
+- Fixing the preview inside this plan: out of scope; shelved.
+
+### D94 — LOCKED 2026-09-11 — Models and budget: the spawn line at 75%, enforced by a hook
+
+**Raised** by the maintainer's first priority, tokens, and their ask that the one running the
+session stop spawning workers before a limit hits and find a good stopping point.
+
+#### The calls
+
+- **Fable at max only for this plan and the review at the end of each phase.** Opus at extra-high
+  effort runs each phase, lands, writes the freeze commit and does every behavior-touching step.
+  Sonnet at high effort does the lanes, the tooling scripts, the docs triage, the tests, the merge
+  step and the bookkeeping. Haiku stays on trial for sorting docs, existence checks and header
+  drafts for small files, one batch in five checked by Sonnet, every use logged. Scripts do
+  everything mechanical.
+- **The spawn line.** The share of the five-hour window past which no new agent may start: 75%
+  for a trial, one number in the project settings, changed by the maintainer saying "raise the
+  spawn line to N". It is the figure the usage screen shows and it is account-wide.
+- **A hook enforces it.** Past the line, a request to start an agent is refused with a plain
+  message; the lane in flight finishes and commits; the session lands what is green, writes the
+  handoff note and stops.
+- **A phase starts only below half the spawn line.**
+- **If a script cannot read the usage figure,** the maintainer reads the usage screen once and
+  says the number, and the script maps token totals from the local session logs to a percent.
+- **Every worker's cost goes into a ledger** from its completion notice.
+- **Lanes:** three for behavior-adjacent work, up to six for purely scripted passes. The Workflow
+  tool may fan out read-only work to Sonnet or Haiku workers; the maintainer gave that go on
+  2026-09-09.
+
+#### Passed over
+
+- Watching the budget by the session runner alone: goodwill is not enforcement.
+- Fable running execution sessions: earlier measurement put it behind most limit hits.
+
+### D95 — LOCKED 2026-09-11 — The rules that are enforced by a check, and the list of numbers that may only improve
+
+**Raised** when the maintainer asked what we have learned that can be enforced so the code is
+written well from now on, not just cleaned once.
+
+#### The calls
+
+- **A list of numbers that may only get better,** with the 2026-09-09 measurements as the start
+  values and the targets in the plan. The verify command fails if any number gets worse. It is
+  what keeps the project from drifting back.
+- **One verify command** with a quick mode (types plus the tests related to the change) before
+  every lane commit, and a full mode (everything plus the build and the snapshot check) at every
+  merge. It prints only failures, at most 40 lines.
+- **Back-end method names are generated into a front-end type,** so a typo in a call name fails
+  the type check instead of failing on the device. The one method nobody calls is deleted; all
+  other names stay frozen.
+- **Each setting is declared once,** so a new setting stops touching 18 files and 30 places. This
+  is its own step in the reshape phase.
+- **Only exact copies, and copies where one value differs, are merged on their own.** Anything
+  else needs a written decision first.
+- **Living docs never carry hand-typed counts or line numbers;** dated audit docs may.
+- **A hook refuses a git push** unless a flag is set. **A hook reminds, but does not refuse,**
+  when a file over 600 lines is read without a range.
+- **Freeze the seams before anything moves; leaves first, roots last; the two back-end cycles are
+  broken first.**
+
+#### Passed over
+
+- A hard refusal on whole-file reads: a worker rewriting a file needs the whole file.
+- Test-impact analysis for the back end: the whole suite runs in 30 seconds.
+
+### D96 — LOCKED 2026-09-11 — Copies of the repo, and the cost rules for workers
+
+**Raised** by the 36 stale copies of the repo found on disk, the earlier session that started 442
+commits behind, and a rule review that cost 130,000 tokens.
+
+#### The calls
+
+- **Prune the copies that are merged, clean and idle,** and delete their merged branches. The
+  maintainer runs the script once; it skips anything touched in the last day.
+- **The copy helper becomes a permanent script:** create from the current tip with the base
+  recorded, list with base distance, prune with the safety rules.
+- **All refactor work happens in a copy;** only the landing session touches the shared checkout;
+  the merge step refuses a branch whose base is far behind.
+- **Worker cost rules:** script the checkable part first and hand the model only the misses; one
+  question per worker with the exact lines; a tool-call cap and a token cap in every brief; a
+  fixed report shape; continue a worker with a message instead of spawning a new one; batches of
+  eight to twelve files per worker; a cheap check before an expensive tool, for example the
+  readiness check rather than the open-panel tool to ask whether the panel is open.
+
+#### Passed over
+
+- Shared-cache tricks: pnpm already shares one store across every copy.
+- One worker per file: the fixed cost of starting a worker dominates.

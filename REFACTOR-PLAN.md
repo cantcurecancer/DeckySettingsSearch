@@ -1,5 +1,9 @@
 # BonsAI Refactor Plan
 
+> **Superseded on 2026-09-11 by [Plan 51: Refactor round two](docs/planning/51-refactor-round-two.md).**
+> Round one's finished items (3.1, 3.2, 3.4, 3.5) stay recorded below for history. This file moves to the
+> archive in plan 51's docs phase; do not start new work from it.
+
 **Goal:** a new contributor can find things and change them safely.
 
 This is a handoff-driven refactor, not an architecture-improvement project. Every

@@ -91,6 +91,20 @@ hook gives a gentle heads-up when a session starts work outside this.
   who walks past something and presses Up to go back does not return to it; they land somewhere they never visited. Related to the
   two-star entry about Up skipping sections, but sharper: the two directions disagree about what the reply's stops are.
   Evidence `runs/round35-spoiler-block-down-and-up.json`.
+- ★ `[platform]` **Deck recorder produced empty videos** — **fix ready, awaiting commit.** The recording tool asked
+  the compositor for its video by name, which connects but sends no picture; its fallback then searched for a label
+  the Deck never prints, so that failed too. Fixed 2026-09-11 by asking for the video by its number first, in this
+  repo's recording script and both copies inside the plugin-studio checkout. Verified on the Deck: an eight-second
+  clip recorded on the first try; the plugin-studio server needs a restart to pick up the fix.
+- ★ `[platform]` **Deck walk tool wrote a file on every run** — **fix ready, awaiting commit.** Every run of the
+  walk tool saved a record file into the runs folder automatically, and 464 of them had built up and gotten
+  committed by accident. Fixed 2026-09-11 in the plugin-studio checkout: now only a run you name saves a file, and
+  the runs folder is ignored by git from today. The 464 old files stay for now, until plan 51's docs phase decides
+  which ones a testing row should point to.
+> - ★ `[platform]` `[shelved]` **In-IDE preview never gets past its loading screen** *— **OPEN, shelved 2026-09-11
+>   (D93): not a gate for anything.** On the maintainer's machine the preview stops on its loading screen and never
+>   moves past it; its command channel takes commands but never answers, and it produced no screenshot. Sorted with
+>   the other tooling in plan 51's docs phase. [Plan](planning/51-refactor-round-two.md).*
 - ★★ `[focus]` **After the panel remounts the ring parks on a zero-size container** — **OPEN, found 2026-09-04.** On a fresh mount
   the ring lands on "Ask bonsAI" (Main) or "Where AI runs" (Ollama), both 0x0 rects that the visibility oracle calls OFFSCREEN, so
   the panel opens with nothing highlighted until the first press.
@@ -324,6 +338,10 @@ replace it with a specific issue when one exists.
   headset and the Frame comes along. Not a Decky plugin. The in-game answer surface that is blocked on the Deck is open here. The
   test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
   answer be read at arm's length. [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md).
+- ★★★★★ `[refactor]` **Refactor round two (plan 51)** — **OPEN, planned 2026-09-11, calls locked (D89 to D96).** A
+  seven-phase clean-up touching the code, the tests, the build scripts, the docs and how agent sessions work here,
+  with nothing about how the plugin behaves changing for a person using it. Work starts only when the maintainer
+  says the exact words "start refactor implementation now." [Plan](planning/51-refactor-round-two.md).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
   thinking model to think and throws the thinking away; the line under your question shows a stock phrase for the whole wait.
   Planned: three lines at the answer's size show the model's own newest sentences, fold to one line with the seconds when the
