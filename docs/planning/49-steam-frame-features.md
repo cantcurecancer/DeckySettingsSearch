@@ -202,14 +202,17 @@ is the cheapest real headset that behaves like a Frame will, since both stream f
 
 ## 5. Calls the maintainer still owns
 
-None of these are filed as a decision entry yet. They go to the decisions file when the maintainer
-picks them up.
+See [52-frame-features-second-look.md](52-frame-features-second-look.md) for the deeper look behind
+three of these, and the decisions file entry D97 for where they are filed.
 
-1. **The Frame entry's rating.** The study asked for six stars to become two. Still six.
+1. **The Frame entry's rating.** The study asked for six stars to become two. Still six. Filed as D97
+   call 1.
 2. **The study's first step.** Rewrite the four Frame tips and add the README line, or leave them.
+   **Done 2026-09-12.**
 3. **The one decision in 2.9.** Whether bonsAI grows a second way to run. Everything above four stars
-   on this list waits on it.
-4. **Which headset for the tests.** None, a Quest with Steam Link, or wait for the Frame.
+   on this list waits on it. Filed as D97 call 2.
+4. **Which headset for the tests.** None, a Quest with Steam Link, or wait for the Frame. Filed as D97
+   call 3.
 
 ## 6. The Frame tips — shipped 2026-09-12
 

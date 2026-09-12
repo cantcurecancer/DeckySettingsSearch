@@ -4839,3 +4839,59 @@ commits behind, and a rule review that cost 130,000 tokens.
 
 - Shared-cache tricks: pnpm already shares one store across every copy.
 - One worker per file: the fixed cost of starting a worker dominates.
+
+### D97 — PARTLY LOCKED 2026-09-11 (raised the same day) — The Frame features: four calls, the tips go, the voice shape and the anti-cheat rule
+
+**Raised** by the maintainer's read of [planning/49-steam-frame-features.md](../planning/49-steam-frame-features.md)
+on 2026-09-11. The plan listed four calls in its § 5 that were never filed. This entry files them, records the
+three instructions the maintainer gave in the same chat, and points to the deeper look in
+[planning/52-frame-features-second-look.md](../planning/52-frame-features-second-look.md).
+
+#### Locked 2026-09-11
+
+- **The seven Frame tips ship** (call 2 of the plan). The four old tips go, the seven from § 6 of the plan
+  replace them, and the README gets one line saying bonsAI does not run on the Frame and how to use a Deck
+  beside it. Shipped the same day; see the roadmap entry.
+- **The floating panel follows Steam's own way of drawing over a game, and never touches the game.** The
+  maintainer's words: we must not get people in trouble in online games. Best effort. The rules, in full, are
+  in plan 52 § 4. The short form: use only SteamVR's official door for panels; never load anything into a
+  game, never hook it, never read its memory, never send it input, never copy its picture. This is the same
+  position bonsAI already holds on the Deck, where it lives inside Steam's own menu. What we cannot promise:
+  each game's anti-cheat sets its own policy. The README says so when the panel ships.
+- **Voice follow-ups have a sound cue and stay simple.** After a spoken answer ends: one short rising tone,
+  the mic opens for a few seconds, and if the mic hears something it keeps listening until it goes quiet;
+  then it matches a handful of words. A short falling tone when the mic closes. No wake word, no menu, no
+  confirmation step. The full shape and the open questions are in plan 52 § 3.
+
+#### The calls still open
+
+Each has a recommendation; none is locked.
+
+1. **The Frame entry's rating.** The study asked for six stars to become two. (a) Re-rate to two, since the
+   nine planned entries now carry the work and this entry is only "the tips and the README line", which have
+   shipped; (b) keep six and treat it as the umbrella for all nine; (c) close it as done and let the nine
+   entries stand alone. *Recommended: (c).* The entry has nothing left to do that is not on another line.
+2. **Does bonsAI grow a second way to run?** (the plan's 2.9). The floating panel cannot exist without an
+   answer, because today the only way anything talks to bonsAI's Python side is through Decky on the Deck.
+   There is no network door. The choices: (a) the PC program carries its own copy of the brain, a second
+   implementation that would drift; (b) the Deck opens a small network door and the PC program asks the
+   Deck, which must then be awake; (c) the Python side runs on the PC as well, unchanged, with the panel as
+   its front, one code base on two hosts. *Recommended: find out how far (c) is from true before choosing.*
+   The Python tests already pass on the maintainer's Windows PC, so the backend is less tied to the Deck than
+   the plan assumed. Plan 52 § 5 lists what to check. Do not reopen llama.cpp for the Frame; that stays a
+   Deck question, as the study said.
+3. **Which headset for the tests.** The maintainer has none (2026-09-11). (a) None, pretend headset only:
+   answers the panel questions, not the mic or the wrist panel; (b) a Quest with Steam Link, the cheapest
+   that behaves like a Frame will; (c) wait for the Frame. *Recommended: (a) now, (c) after.* Nothing on the
+   list is blocked on a real headset until a panel exists, and by then the Frame may be out.
+4. **Headline first: build it, or count first.** The maintainer called it the weakest of the nine. (a) Build
+   the prompt change as planned; (b) count first: take the answers the answer test already produces, and
+   record how often the first sentence already stands alone and how often it leaks a spoiler; build the
+   prompt change only if the count is poor; (c) drop it and let Headset mode's "answer for the ear" carry the
+   shaped opening. *Recommended: (b), expecting it to end in (c).* The reasons are in plan 52 § 2.
+
+#### Passed over
+
+- A settings switch for each sound cue. One switch for the feature is enough; the tones are the feature.
+- A confirmation step before a spoken "go on" reveals a spoiler. The word is the confirmation.
+- Buying a headset now. Nothing in the next two steps needs one.

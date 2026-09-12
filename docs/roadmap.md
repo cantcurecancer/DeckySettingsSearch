@@ -197,7 +197,11 @@ replace it with a specific issue when one exists.
 - ★★ `[reply]` **Headline first: every answer opens with one line that stands alone** — **OPEN, filed 2026-09-08.** The model is
   asked to start every answer with one short sentence that carries the point and gives nothing away. The reply-ready popup, a
   spoken answer and any headset card then always have a good first line to show, instead of whatever the answer happens to begin
-  with. Sits beside Terse mode without replacing it. No headset or PC test needed. [Plan](planning/49-steam-frame-features.md).
+  with. Sits beside Terse mode without replacing it. No headset or PC test needed. **The maintainer called this the weakest of
+  the nine Frame features on 2026-09-11 and asked for a count before a build:** how many of ten first sentences already stand
+  alone on their own, and how many give something away. Build the change only if that count comes back poor. Filed as D97 call
+  4. [Plan](planning/49-steam-frame-features.md) ·
+  [Second look § 2](planning/52-frame-features-second-look.md#2-headline-first-the-weakest-one-and-what-to-do-instead).
 - ★★ `[reply]` **The answer's first lines in the reply-ready toast** — **OPEN, planned 2026-09-05, calls locked (D63).** When an
   answer finishes while the menu is closed, the toast says only *Reply ready*. It would read *bonsAI* over the first lines of
   the answer, in every mode, for eight seconds, so a short answer is read without leaving the game; tap still opens the panel.
@@ -211,7 +215,13 @@ replace it with a specific issue when one exists.
 - ★★ `[ui]` **Glance view: the answer alone, in big text** — **OPEN, filed 2026-09-08.** Opening the menu from the popup shows
   only the answer, large, with the chips, the question box and the tab bar out of the way, so a person opens, reads and closes in
   a couple of seconds. B returns to the full panel. Serves a Deck sitting beside a headset as much as the Deck alone. Measure on
-  the Deck first; owes the free-play sweep. No headset test needed. [Plan](planning/49-steam-frame-features.md).
+  the Deck first; owes the free-play sweep. No headset test needed. **A mockup was drawn 2026-09-11 at true size from the real
+  stylesheet values**, showing three ways to do it; the recommendation is the plain, bare option — just the answer, edge to
+  edge, with one line at the bottom saying what the buttons do. Three questions for the maintainer are still open, on the
+  mockup itself. [Plan](planning/49-steam-frame-features.md) ·
+  [Mockup and options](planning/52-frame-features-second-look.md#6-glance-view-the-brief-and-the-mockup) ·
+  [Open questions](planning/52-frame-features-second-look.md#65-open-questions-for-the-maintainer-on-the-canvas) ·
+  [Drawing](https://claude.ai/code/artifact/c48fb3e2-38ef-4c91-997c-c515353eec96).
 - ★★ `[ui]` **Replace the bonsAI tab icon with the redesign's** — **OPEN, and no longer waiting on a drawing.** Flatter,
   more silhouette, because it renders at 14px. **Checked 2026-09-05: the redesign document never actually draws one**, and the
   maintainer has said they do not want to supply one. So whoever builds it proposes a shape and the maintainer approves it by
@@ -228,7 +238,10 @@ replace it with a specific issue when one exists.
 - ★★ `[voice]` **Voice follow-ups** — **OPEN, filed 2026-09-08; waits on Read answers aloud.** For a few seconds after a spoken
   answer ends, the mic listens for a handful of words: again, go on, stop, next tip. No wake word needed, since the mic opens only
   in that window and closes on silence. The words a person needs when they cannot reach the Deck or scroll. The Deck alone is
-  enough to test. [Plan](planning/49-steam-frame-features.md).
+  enough to test. **The maintainer set the exact shape 2026-09-11:** a short rising tone when the mic opens right after a spoken
+  answer, the mic keeps listening as long as it hears something, and a short falling tone when it closes. Four words: again, go
+  on, stop, next. One setting, off by default. [Plan](planning/49-steam-frame-features.md) ·
+  [Second look § 3](planning/52-frame-features-second-look.md#3-voice-follow-ups-a-sound-a-short-listen-a-few-words).
 - ★★★ `[ask]` `[focus]` **Steam settings shortcuts float above the question box** — **OPEN, planned 2026-09-06, all calls locked
   (D79).** Today the list of matching Steam settings appears under the box and pushes the box, the chips and the whole
   conversation up the screen; two letters can match 71 settings and throw the box off the top. It moves to a card above the box
@@ -332,7 +345,11 @@ replace it with a specific issue when one exists.
   bonsAI's panel floating over any VR game, drawn by a small program on the PC that runs SteamVR, so it serves every SteamVR
   headset and the Frame comes along. Not a Decky plugin. The in-game answer surface that is blocked on the Deck is open here. The
   test runs today on a PC with SteamVR and no headset at all: does a panel show over a game, how does pointing work, can the
-  answer be read at arm's length. [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md).
+  answer be read at arm's length. **Locked rule (D97):** the panel goes only through SteamVR's own panel door and never touches
+  the game itself, in file, in memory or in input — anything else risks an anti-cheat ban for someone playing online with bonsAI
+  open. Best effort: each game's anti-cheat sets its own policy, and the README will say so once the panel ships.
+  [Plan](planning/49-steam-frame-features.md) · [PC setup](planning/50-steamvr-pc-setup.md) ·
+  [The anti-cheat rule in full](planning/52-frame-features-second-look.md#4-the-floating-panel-and-anti-cheat).
 - ★★★★★ `[reply]` **Reasoning display** — **OPEN, planned 2026-09-05, calls locked (D70, D71).** The plugin asks a
   thinking model to think and throws the thinking away; the line under your question shows a stock phrase for the whole wait.
   Planned: three lines at the answer's size show the model's own newest sentences, fold to one line with the seconds when the
@@ -348,7 +365,11 @@ replace it with a specific issue when one exists.
   2026-09-08.** The floating panel needs bonsAI to run outside Decky, which is what the Native QAM shortcut tile research keeps
   circling, and any model on the Frame itself runs through llama.cpp, not Ollama. Three entries, one question: does bonsAI grow a
   second way to run. Decide it once. The panel half benefits from a PC with SteamVR now; the llama.cpp half is a Deck question.
-  [Plan](planning/49-steam-frame-features.md).
+  **The gap underneath this: there is no network door into bonsAI's Python side today** — nothing on another machine can reach
+  it — so a panel on the PC would have a screen and no brain until this is decided. Three options and a recommendation to find
+  out how far the "run the same Python side on the PC too" option really is from true, before choosing, are in plan 52 § 5.
+  Filed as D97 call 2. [Plan](planning/49-steam-frame-features.md) ·
+  [Second look § 5](planning/52-frame-features-second-look.md#5-the-second-way-to-run-the-gap-plan-49-underplayed).
 - ★★★★★★ `[platform]` **Remote Play diagnostics layer** — **OPEN.** Streamed-gameplay answers weight encode latency and host-vs-client
   fixes. Noted in [09-steam-frame-companion-feasibility.md](planning/09-steam-frame-companion-feasibility.md) § B8.
 - ★★★★★★ `[platform]` **Steam Frame companion UX** — **OPEN, research first.**
@@ -356,7 +377,8 @@ replace it with a specific issue when one exists.
   [49](planning/49-steam-frame-features.md), with a PC test bench in [50](planning/50-steamvr-pc-setup.md). The study's first step
   shipped 2026-09-12: the seven Frame knowledge-base tips were rewritten (no more mention of a phone app that does not exist) and
   one README line was added saying how to use bonsAI beside a Frame. Re-rating this entry from six stars to two is still the
-  maintainer's own call and has not been made.
+  maintainer's own call and has not been made — it is filed as D97 call 1, with the recommendation to close this entry as done
+  instead of re-rating it, since the nine planned entries now carry all of the remaining work.
 - ★★★★★★ `[reply]` **In-game answer surface** — **OPEN, split 2026-09-05.** Read an answer without leaving the game. The full
   overlay is upstream-gated and stays here as research. The unblocked slice, the toast carrying the answer's first lines, is its
   own ★★ entry above, planned in [38](planning/38-toast-answer-lines.md). Reframed 2026-09-08: the same surface is open in a

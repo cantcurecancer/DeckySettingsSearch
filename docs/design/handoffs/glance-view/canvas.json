@@ -1,0 +1,84 @@
+{
+  "artboards": [
+    {
+      "file": "Today.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 300,
+      "h": 700,
+      "title": "Today: the Main tab as built"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 380,
+      "y": 0,
+      "w": 300,
+      "h": 700,
+      "title": "Glance view (leading: bare)"
+    },
+    {
+      "file": "OptionOneAtATime.dc.html",
+      "x": 760,
+      "y": 0,
+      "w": 300,
+      "h": 700,
+      "title": "Option B: one paragraph at a time"
+    },
+    {
+      "file": "OptionTabBarStays.dc.html",
+      "x": 1140,
+      "y": 0,
+      "w": 300,
+      "h": 700,
+      "title": "Option C: tab bar stays, Read aloud button"
+    },
+    {
+      "file": "OptionBare.dc.html",
+      "x": 380,
+      "y": 860,
+      "w": 300,
+      "h": 700,
+      "title": "Option A: bare (same as Main)"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-today",
+      "x": 0,
+      "y": -230,
+      "w": 300,
+      "text": "Today, at true size (300 px wide).\nTab bar 20 px, chat row, transcript, then the dock: two chips of 30 px, the question box of 66 px, the Ask button of 36 px. The dock is 157 px, so the answer gets 412 px. Answer text is 12 px on a 1.4 line. Every value is from the stylesheet."
+    },
+    {
+      "id": "note-bare",
+      "x": 380,
+      "y": -230,
+      "w": 300,
+      "text": "Glance view, leading candidate: only the answer.\nNo tab bar, no chips, no question box. The answer box touches both edges (rule 1 and 2) and the text is 16 px on a 1.5 line, one third bigger. Down still walks paragraph by paragraph with the same 2 px ring. One 24 px line at the bottom says what B, A and Down do. Costs: the paragraph ring and the spoiler block are the real ones, only larger."
+    },
+    {
+      "id": "note-one",
+      "x": 760,
+      "y": -230,
+      "w": 300,
+      "text": "Option B: one paragraph fills the screen.\nText at 20 px. Down moves to the next paragraph, the dots say where you are. Best for reading across a room; worst for a long checklist, because you cannot see two steps at once. The hidden spoiler is its own stop, as today."
+    },
+    {
+      "id": "note-keep",
+      "x": 1140,
+      "y": -230,
+      "w": 300,
+      "text": "Option C: the tab bar stays, and the planned Read aloud button sits where the Ask button was.\nLB and RB still change tabs, so a person is never lost. Costs 24 px at the top and 68 px at the bottom, which is 92 px of the reading space the other two options keep."
+    },
+    {
+      "id": "note-assumed",
+      "x": 0,
+      "y": 860,
+      "w": 300,
+      "text": "What is not from our code.\nThe dark ground behind the panel is Steam's own and is drawn here as #0e141b. The font is the one the existing mockups use, since the plugin inherits Steam's. Headings inside an answer have no rule in the stylesheet, so none are drawn. The question, the answer and the two chips are made up to show shape, not a real game's data."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
